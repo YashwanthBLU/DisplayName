@@ -42,12 +42,7 @@ function App() {
           />
         </label>
         <br />
-        <button
-          type="submit"
-          disabled={firstName.length === 0 || lastName.length === 0}
-        >
-          Submit
-        </button>
+        <button type="submit">Submit</button>
       </form>
 
       <br />
