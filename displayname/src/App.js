@@ -32,7 +32,7 @@ function App() {
             onChange={(e) => setFirstName(e.target.value)}
           />
         </label>
-        <br />
+
         <label>
           Last Name:
           <input
@@ -41,11 +41,10 @@ function App() {
             onChange={(e) => setLastName(e.target.value)}
           />
         </label>
-        <br />
+
         <button type="submit">Submit</button>
       </form>
 
-      <br />
       {fullName.length > 0 && <label>Full Name: {fullName}</label>}
     </div>
   );
