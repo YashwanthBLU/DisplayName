@@ -11,18 +11,19 @@ function App() {
     e.preventDefault();
     if (firstName.length > 0 && lastName.length > 0) {
       setFullName(firstName + " " + lastName);
-      console.log(fullName);
     } else if (firstName.length === 0) {
       alert(`Please fill out this field`);
+      setFullName("");
     } else if (lastName.length === 0) {
       alert(`Please fill out this field`);
+      setFullName("");
     }
   };
 
   return (
     <div className="App">
       <h1>Full Name Display</h1>
-      <form>
+      <form onSubmit={ValidateInput}>
         <label>
           First Name:
           <input
@@ -40,15 +41,15 @@ function App() {
             onChange={(e) => setLastName(e.target.value)}
           />
         </label>
+        <br />
+        <button
+          type="submit"
+          disabled={firstName.length === 0 || lastName.length === 0}
+        >
+          Submit
+        </button>
       </form>
-      <button
-        type="submit"
-        onClick={(e) => {
-          ValidateInput(e);
-        }}
-      >
-        Submit
-      </button>
+
       <br />
       {fullName.length > 0 && <label>Full Name: {fullName}</label>}
     </div>
